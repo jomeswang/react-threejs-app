@@ -1,18 +1,17 @@
-import React, { Component } from 'react';
-import logo from './logo.svg';
-import './App.css';
-import ThreeMap from './ThreeMap';
+import React, { Component } from "react";
+import "./App.css";
+import ThreeRender from "./utils/three-render";
+import WaveGlb from './assets/glbs/wave.glb'
 
 class App extends Component {
+  componentDidMount() {
+    const threeRender = new ThreeRender();
+    threeRender.load(WaveGlb)
+  }
   render() {
     return (
       <div className="App">
-        <div className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-        </div>
-        <div>
-            <ThreeMap/>
-        </div>
+       
       </div>
     );
   }
